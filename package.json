@@ -1,0 +1,41 @@
+{
+  "name": "spotify-playlist-mcp",
+  "version": "0.1.0",
+  "description": "Guarded Spotify playlist curation tools for Codex scheduled tasks",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhajdab/spotify-playlist-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/suhajdab/spotify-playlist-mcp/issues"
+  },
+  "homepage": "https://github.com/suhajdab/spotify-playlist-mcp#readme",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "spotify-playlist-mcp": "dist/index.js",
+    "spotify-playlist-auth": "dist/auth-cli.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+    "auth": "npm run build && node dist/auth-cli.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "dotenv": "^17.2.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.0"
+  }
+}
